@@ -1,6 +1,6 @@
 import callData from "../utils/callData.js";
 import { getUINavPills, getUITabPanes } from "../controllers/controller.js";
-import Item from "../models/Item.js";
+
 
 // TODO: Render UI body for Dressing Room
 const renderHTML = () => {
@@ -23,26 +23,23 @@ const renderHTML = () => {
         });
 
         // todo: render html on UI
-        $("#myTab").html(contentNavPills);
-        $("#nav-tabContent").html(contentTabPanes);
+        document.getElementById('myTab').innerHTML = contentNavPills;
+        document.getElementById('nav-tabContent').innerHTML = contentTabPanes;
     }).catch((err) => {
         console.log("err", err);
     });
 };
 
-// TODO: 
-$('body').delegate('.tryOn', 'click', () => {
-    // Get item's values when pressing on "Try on" button
-    let id = $(this).data("id"); 
-
-    console.log("id", id);
-    
-    
-});
-
-
 // TODO: Render body content on UI
-$(document).ready(() => {
-    renderHTML();
-});
+renderHTML();
+
+// TODO: Try item on => id will be printed out 
+window.tryOnItem = () => {
+    console.log("aloha");
+
+}
+
+
+
+
 

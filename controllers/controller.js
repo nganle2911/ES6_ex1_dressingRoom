@@ -1,3 +1,5 @@
+import Item from "../models/Item.js";
+
 // todo: Get UI for navPills
 const getUINavPills = (itemNav, activeClass) => {
     return `
@@ -20,15 +22,16 @@ const getSameTypeArr = (navPillType, itemsArr) => {
 // todo: Get each item's UI for each tabPane  
 const getUIEachItem = (newArr) => {
     let itemContentHtml = "";
+    // console.log("newArr", newArr);
+
     newArr.map((item) => {
-        // console.log("item", item);
         itemContentHtml += `
             <div class="col-3">
                 <div class="card">
                     <img src=${item.imgSrc_jpg} class="card-img-top" alt="..." >
                     <div class="card-body text-center">
                         <h5 class="card-title">${item.name}</h5>
-                        <button href="#" class="btn btn-primary tryOn" style="width: 100%;">Try on</button>
+                        <button onclick="tryOnItem('${item.id}')" href="#" class="btn btn-primary tryOn" style="width: 100%;">Try on</button>
                     </div>
                 </div>
             </div>
@@ -78,12 +81,22 @@ const getUITabPanes = (navPillType, itemsArr) => {
     return tabPane; 
 }
 
+// todo: Get data from item 
+const getDataItem = (item) => {
+    let id = item.id;
+    let name = item.name;
+    let type = item.type;
+    let img_png = item.imgSrc_png;
+    let img_jpg = item.imgSrc_jpg;
+    let desc = item.desc; 
 
-
+    return new Item(id, name, type, desc, img_jpg, img_png); 
+}
 
 export {
     getUINavPills,
     getSameTypeArr,
     getUIEachItem,
-    getUITabPanes
+    getUITabPanes,
+    getDataItem
 }
