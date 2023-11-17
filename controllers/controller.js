@@ -15,8 +15,8 @@ const getSameTypeArr = (navPillType, itemsArr) => {
         if (item.type === navPillType) {
             newArr.push(item);
         }
-    }); 
-    return newArr; 
+    });
+    return newArr;
 }
 
 // todo: Get each item's UI for each tabPane  
@@ -37,7 +37,7 @@ const getUIEachItem = (newArr) => {
             </div>
         `;
     });
-    return itemContentHtml; 
+    return itemContentHtml;
 }
 
 // todo: Get UI for tabPanes
@@ -78,7 +78,7 @@ const getUITabPanes = (navPillType, itemsArr) => {
         default:
             break;
     }
-    return tabPane; 
+    return tabPane;
 }
 
 // todo: Get data from item 
@@ -88,9 +88,9 @@ const getDataItem = (item) => {
     let type = item.type;
     let img_png = item.imgSrc_png;
     let img_jpg = item.imgSrc_jpg;
-    let desc = item.desc; 
+    let desc = item.desc;
 
-    return new Item(id, name, type, desc, img_jpg, img_png); 
+    return new Item(id, name, type, desc, img_jpg, img_png);
 }
 
 export {

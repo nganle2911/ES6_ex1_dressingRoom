@@ -1,6 +1,9 @@
 class GetData {
-    getListData = () => {
-        return $.getJSON("../data/Data.json");
+    getListData = async () => {
+        const data = await fetch("../data/Data.json");
+        const dataArr = await data.json(); 
+
+        return dataArr;
     }
 }
 
