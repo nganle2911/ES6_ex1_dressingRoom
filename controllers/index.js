@@ -88,6 +88,16 @@ const renderOnContain = (chosenItems) => {
             renderBikiniTop(item.imgSrc_png);
         } else if (item.type === "botclothes") {
             renderBikiniBottom(item.imgSrc_png);
+        } else if (item.type === "shoes") {
+            renderFeet(item.imgSrc_png);
+        } else if (item.type === "handbags") {
+            renderHandbag(item.imgSrc_png);
+        } else if (item.type === "hairstyle") {
+            renderHairstyle(item.imgSrc_png);
+        } else if (item.type === "necklaces") {
+            renderNecklace(item.imgSrc_png);
+        } else {
+            renderBackground(item.imgSrc_png);
         }
     })
 }
@@ -117,6 +127,78 @@ const renderBikiniBottom = (img) => {
         transform: scale(0.5);
         top: -30%;
         left: -32%;
+    `;
+}
+
+// todo: render feet
+const renderFeet = (img) => {
+    document.getElementById("feet").style.cssText = `
+        width: 1000px;
+        height: 1000px;
+        position: absolute;
+        background: url("${img}");
+        background-repeat: no-repeat;
+        transform: scale(0.5);
+        top: -30%;
+        left: -32%;
+    `;
+}
+
+// todo: render handbag
+const renderHandbag = (img) => {
+    document.getElementById("handbag").style.cssText = `
+        width: 1000px;
+        height: 1000px;
+        position: absolute;
+        background: url("${img}");
+        background-repeat: no-repeat;
+        transform: scale(0.5);
+        top: -30%;
+        left: -32%;
+    `;
+}
+
+// todo: render hairstyle
+const renderHairstyle = (img) => {
+    document.getElementById("hairStyle").style.cssText = `
+        width: 1000px;
+        height: 1000px;
+        background: url("${img}");
+        position: absolute;
+        top: -75%;
+        right: -57%;
+        transform: scale(0.15);
+        z-index: 4;
+    `;
+}
+
+// todo: render necklace
+const renderNecklace = (img) => {
+    document.getElementById("neckLace").style.cssText = `
+        width: 500px;
+        height: 1000px;
+        position: absolute;
+        bottom: -40%;
+        right: -3.5%;
+        transform: scale(0.5);
+        z-index: 4;
+        background: url("${img}");
+    `;
+}
+
+// todo: render background 
+const renderBackground = (img) => {
+    document.getElementById("backGround").style.cssText = `
+        width: 900px;
+        height: 1500px;
+        background-image: url("${img}");
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: absolute;
+        bottom: -90%;
+        right: -50%;
+        transform: scale(0.5);
+        z-index: -1;
     `;
 }
 
